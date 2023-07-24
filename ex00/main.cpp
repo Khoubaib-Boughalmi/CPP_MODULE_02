@@ -1,7 +1,10 @@
 #include "Fixed.h"
 
 int main()
-{
-    std::cout << "Hello world" << std::endl;
+{   
+    Fixed a(10);
+    Fixed b(a);
+    a.getRawBits();
+    b.getRawBits();
     return 0;
-}
+}   
