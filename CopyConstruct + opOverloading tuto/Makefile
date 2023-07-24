@@ -1,9 +1,9 @@
-NAME=EX00
+NAME=tuto
 CC = c++
 CFLAGS=  -std=c++98 -Wall -Wextra -Werror
 
 SRCS =	main.cpp \
-		Fixed.cpp
+		MyClass.cpp
 
 %.o:%.cpp
 	${CC} ${CFLAGS} -c $^ -o $@
