@@ -1,10 +1,10 @@
 #include "Point.h"
 
 int main( void ) {
-    Point const  a(10,10);
-    Point const  b(15.2,1.3);
-    Point const  c(5.2,7.8);
-    Point const  point(9.2,0.8);
-    bsp(a, b, c, point);
+    Point const  a(0,0);
+    Point const  b(5,0);
+    Point const  c(7,1);
+    Point const  point(-40,10);
+    std::cout << bsp(a, b, c, point) << std::endl;
 }
 
