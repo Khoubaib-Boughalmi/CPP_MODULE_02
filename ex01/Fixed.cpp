@@ -5,33 +5,30 @@ Fixed::Fixed(): fixedPoint(0) {
 }
 
 Fixed::Fixed(const int intValue): fixedPoint(0) {
+    std::cout << "Int constructor called" << std::endl;
     this->fixedPoint = intValue << this->fractionalBits;
 }
 
 Fixed::Fixed(const float floatValue): fixedPoint(0) {
+    std::cout << "Float constructor called" << std::endl;
     this->fixedPoint = (int)roundf(floatValue  * (1 << this->fractionalBits));
 }
 
-Fixed::Fixed(const Fixed& other) {
-    (void) other;
-    
+Fixed::Fixed(const Fixed& other) {    
     std::cout << "Copy constructor called" << std::endl;
-    this->fixedPoint =  this->getRawBits();
+    this->fixedPoint =  other.fixedPoint;
 }
 
 float Fixed::toFloat( void ) const {
-    std::cout << "Float constructor called" << std::endl;
-    return (int)(this->fixedPoint  / (1 << this->fractionalBits));
+    return ((float)this->fixedPoint  / (1 << this->fractionalBits));
 }
 
 int Fixed::toInt( void ) const {
-    std::cout << "Int constructor called" << std::endl;
-    return ((int)this->fixedPoint << this->fractionalBits);
+    return ((int)this->fixedPoint >> this->fractionalBits);
 }
 
 Fixed& Fixed::operator=(const Fixed& other) {
     std::cout << "Copy assignment operator called" << std::endl;
-    this->getRawBits();
     this->fixedPoint = other.fixedPoint;
     return (*this);
 }
