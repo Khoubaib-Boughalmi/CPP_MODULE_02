@@ -1,4 +1,3 @@
-// (1/2) (x1(y2 - y3) + x2(y3 - y1) + x3(y1 - y2))
 #include "Point.h"
 
 float calculate_area(Point const a, Point const b, Point const c)
@@ -15,6 +14,8 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
     float area2 = calculate_area(a, b, point);//abp
     float area3 = calculate_area(a, c, point);//acp
     float area4 = calculate_area(b, c, point);//bcp
+    if(!area1 || !area2 || !area3 || !area4)
+        return (0);
     if(area2 + area3 + area4 == area1)
         return (1);
     return (0);
