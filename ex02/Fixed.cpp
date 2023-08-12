@@ -116,26 +116,26 @@ void Fixed::setRawBits( int const raw ) {
     // std::cout << "setRawBits member function called" << std::endl;
 }
 
-Fixed Fixed::min(Fixed& f1, Fixed& f2) {
+Fixed &Fixed::min(Fixed& f1, Fixed& f2) {
 	if(f1 > f2)
-		return (Fixed(f2));
-	return (Fixed(f1));
+		return (f2);
+	return (f1);
 }
 
-Fixed Fixed::max(Fixed& f1, Fixed& f2) {
+Fixed &Fixed::max(Fixed& f1, Fixed& f2) {
 	if(f1 >= f2)
-		return (Fixed(f1));
-	return (Fixed(f2));
+		return (f1);
+	return (f2);
 }
 
-Fixed Fixed::min(const Fixed& f1, const Fixed& f2) {
+const Fixed &Fixed::min(const Fixed& f1, const Fixed& f2) {
 	if(f1 > f2)
-		return (Fixed(f2));
-	return (Fixed(f1));
+		return (f2);
+	return (f1);
 }
 
-Fixed Fixed::max(const Fixed& f1, const Fixed& f2) {
+const Fixed &Fixed::max(const Fixed& f1, const Fixed& f2) {
 	if(f1 >= f2)
-		return (Fixed(f1));
-	return (Fixed(f2));
+		return (f1);
+	return (f2);
 }
